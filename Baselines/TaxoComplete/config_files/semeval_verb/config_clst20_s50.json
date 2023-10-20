@@ -1,0 +1,13 @@
+{
+    "batch_size" : 32,
+    "epochs" : 5,
+	"sampling" : "closest",
+    "saving_path" : "./data/SemEval-Verb/results/",
+    "name" : "wordnet_verb",
+    "data_path" : "./data/SemEval-Verb/",
+    "model_name" : "multi-qa-distilbert-cos-v1",
+    "neg_number" : 20,
+    "alpha":0.1,
+    "partition_pattern":"internal",
+    "seed":50
+}

@@ -1,0 +1,14 @@
+{
+    "batch_size" : 32,
+    "epochs" : 20,
+	"sampling" : "closest",
+    "saving_path" : "./data/SemEval-Food/results/",
+    "model_path" : "./data/SemEval-Food/test_2023_8_26_18_54",
+    "name" : "semeval_food",
+    "data_path" : "./data/SemEval-Food/",
+    "model_name" : "/codes/l/Modules/multi-qa-distilbert-cos-v1",
+    "neg_number" : 20,
+    "partition_pattern":"internal",
+    "alpha":0.1,
+    "seed":47
+}

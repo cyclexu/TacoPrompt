@@ -1,0 +1,78 @@
+{
+    "exp_name": "V-",
+    "name": "QENModel",
+    "n_gpu": 1,
+    "data_path": "data/SemEval-Verb/wordnet_verb.pickle.bin",
+    "arch": {
+        "type": "QENModel",
+        "trainer": "TrainerTC",
+        "args": {
+            "dropout": 0.1,
+            "plm": "bert-base-uncased",
+            "code_num": 16,
+            "hidden_dim": 768,
+            "code_dim": 256,
+            "scorer_hidden_dim": 300,
+            "nhead": 8,
+            "transformer_ff_dim": 768,
+            "parent_layers": 2,
+            "sibling_layers": 2,
+            "sibling": 2,
+            "use_placeholder": true
+        }
+    },
+    "train_data_loader": {
+        "type": "UnifiedDataLoader",
+        "args":{
+            "tokenizer": "bert-base-uncased",
+            "taxonomy_name": "wordnet_verb",
+            "sampling_mode": 1,
+            "batch_size": 8,
+            "negative_size": 15,
+            "max_pos_size": 1,
+            "expand_factor": 40,
+            "shuffle": true,
+            "num_workers": 32,
+            "cache_refresh_time": 64
+        }
+    },
+    "optimizer": {
+        "type": "AdamW",
+        "args":{
+            "lr": 5e-5,
+            "weight_decay": 1e-2,
+            "amsgrad": true
+        }
+    },
+    "loss": "bce_loss",
+    "metrics": [
+        "macro_mr", "micro_mr", "hit_at_1", "hit_at_5", "hit_at_10", "precision_at_1", "precision_at_5", "precision_at_10", "mrr_scaled_10"
+    ],
+    "lr_scheduler": {
+        "library": "huggingface",
+        "type": "get_cosine_schedule_with_warmup",
+        "args": {
+            "mode": "min",
+            "factor": 0.5,
+            "patience": 20,
+            "verbose": true
+        }
+    },
+    "trainer": {
+        "lp": 0,
+        "lc": 0,
+        "lb": 0,
+        "lw": 0,
+        "anneal": 1,
+        "epochs": 500,
+        "test_batch_size": 32,
+        "save_dir": "data/saved/SemEval-V/",
+        "save_period": 20,
+        "verbosity": 2,
+        "monitor": "max val_mrr_scaled_10",
+        "early_stop": 20,
+        "grad_clip": 1,
+        "accumulation_iters": 8,
+        "tensorboardX": true
+    }
+}

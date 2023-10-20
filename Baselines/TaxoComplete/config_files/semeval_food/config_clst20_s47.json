@@ -1,0 +1,13 @@
+{
+    "batch_size" : 32,
+    "epochs" : 30,
+	"sampling" : "closest",
+    "saving_path" : "/codes/l/origin_taxocomplete-main/data/SemEval-Foodresults/",
+    "name" : "semeval_food",
+    "data_path" : "/codes/l/origin_taxocomplete-main/data/SemEval-Food/",
+    "model_name" : "/codes/l/Modules/multi-qa-distilbert-cos-v1",
+    "neg_number" : 20,
+    "partition_pattern":"internal",
+    "alpha":0.1,
+    "seed":47
+}

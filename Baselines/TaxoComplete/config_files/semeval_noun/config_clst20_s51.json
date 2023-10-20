@@ -1,0 +1,13 @@
+{
+    "batch_size" : 32,
+    "epochs" : 5,
+	"sampling" : "closest",
+    "saving_path" : "./data/SemEval-Noun/results/",
+    "name" : "wordnet_noun",
+    "data_path" : "./data/SemEval-Noun/",
+    "model_name" : "multi-qa-distilbert-cos-v1",
+    "neg_number" : 10,
+    "partition_pattern":"internal",
+    "alpha":0.1,
+    "seed":51
+}

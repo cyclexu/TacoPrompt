@@ -1,0 +1,14 @@
+{
+    "batch_size" : 32,
+    "epochs" : 5,
+	"sampling" : "closest",
+    "saving_path" : "./data/MAG-PSY-Wiki/results/",
+    "model_path" : "./data/MAG-PSY-Wiki/07-Feb-2023 (20:15:13.967474)",
+    "name" : "psychology",
+    "data_path" : "./data/MAG-PSY-Wiki/",
+    "model_name" : "multi-qa-distilbert-cos-v1",
+    "neg_number" : 20,
+    "partition_pattern":"internal",
+    "alpha":0.1,
+    "seed":47
+}

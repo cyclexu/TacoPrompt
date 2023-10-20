@@ -1,0 +1,12 @@
+{
+    "batch_size" : 32,
+    "epochs" : 5,
+	"sampling" : "closest",
+    "saving_path" : "./data/MAG-CS-Wiki/results/",
+    "name" : "computer_science",
+    "data_path" : "./data/MAG-CS-Wiki/",
+    "model_name" : "multi-qa-distilbert-cos-v1",
+    "neg_number" : 20,
+    "partition_pattern":"internal",
+    "seed":49
+}
